@@ -1,6 +1,6 @@
 # js-common
-一些常用的js组件
 
-##  总结一些常见的js片段
+总结一些常见的js片段
 
-*  searchParam 
+
+*  [获取url参数](./searchParam.js)
