@@ -26,6 +26,9 @@
 
 一个构造函数可以生成多个实例，每个实例使用__proto__指向原形，原形可以使用constructor属性指向构造函数。所以Person.prototype.constructor === Person
 
+## 一张图理解原形以及原形链
+![](./images/prototype4.png)
+
 ## 万物皆空
 
 JavaScript是个挺有意思的语言，有点佛家意味
