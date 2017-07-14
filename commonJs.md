@@ -1,6 +1,9 @@
 
 ## 常用的js代码片段
 
+### Math.min()比Math.max()大,因为Math.min() 返回 Infinity, 而 Math.max()返回 -Infinity。
+
+
 ###  处理localStorage
 
 ```
