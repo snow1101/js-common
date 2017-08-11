@@ -3,6 +3,13 @@
 
 ### Math.min()比Math.max()大,因为Math.min() 返回 Infinity, 而 Math.max()返回 -Infinity。
 
+### 函数声明会覆盖变量声明，但不会覆盖变量赋值。
+
+```
+function a() { return true; } var a; var c = 1;console.log(a); // fun a
+
+var a; var c = 1; a = 1; function a() { return true; } console.log(a); // 1
+```
 
 ###  处理localStorage
 
