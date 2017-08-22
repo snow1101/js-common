@@ -3,6 +3,23 @@
 
 ### Math.min()比Math.max()大,因为Math.min() 返回 Infinity, 而 Math.max()返回 -Infinity。
 
+### 深拷贝
+
+```
+  function deepCopy(source) {
+    var result = {};
+    for(var key in source) {
+      if(typeof source[key] === 'object') {
+        result[key] = deepCopy(source[key])
+      } else {
+        result[key] = source[key]
+      }
+    }
+    return result;
+  }
+
+```
+
 ### 函数声明会覆盖变量声明，但不会覆盖变量赋值。
 
 ```
