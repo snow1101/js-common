@@ -1,6 +1,44 @@
 
 ## 常用的js代码片段
 
+### 如何优雅的实现金钱格式化：1234567890 --> 1,234,567,890
+
+```
+var test1 = '1234567890'
+var format = test1.replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+
+console.log(format) // 1,234,567,890
+```
+
+### 如何优雅的取整
+
+```
+var a = ~~2.33
+
+var b= 2.33 | 0
+
+var c= 2.33 >> 0
+
+```
+### 论如何最佳的让两个整数交换数值
+```
+a ^= b;
+b ^= a;
+a ^= b;
+
+```
+### 统计字符串中相同字符出现的次数。
+```
+var arr = 'abcdaabc';
+
+var info = arr
+    .split('')
+    .reduce((p, k) => (p[k]++ || (p[k] = 1), p), {});
+
+console.log(info); //{ a: 3, b: 2, c: 2, d: 1 }
+
+```
+
 ### Math.min()比Math.max()大,因为Math.min() 返回 Infinity, 而 Math.max()返回 -Infinity。
 
 ### 深拷贝
