@@ -5,6 +5,8 @@
 [TOC]
 
 *  [常用的代码片段](./commonJs.md)
+*  [Javascript高级程序设计笔记](./Javascript高级程序设计笔记.md)
+*  [严格模式下代码区别](./strict.md)
 *  [获取url参数](./searchParam.js)
 *  [原形以及原型链](./prototype.md)
 *  [判断一个js函数名是否被压缩过](./isCrashed.js)
