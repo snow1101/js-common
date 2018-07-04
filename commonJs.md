@@ -1,6 +1,80 @@
 
 ## 常用的js代码片段
 
+### 数组去重
+```javascript
+
+# 方法一
+var arr = [1, 4, 7, 4, 3, 2, 1, 4, 7];
+var newArr = arr.reduce((newArr, current) => {
+	if(newArr.indexOf(current) === -1) {newArr.push(current);} 
+	return newArr;
+}, []);
+console.log(newArr);
+
+# 方法二 思路：当前方案使用了ES6新增的set数据解构的去重特性，然后在将生成的set对象转换成数组。
+var arr = [1, 4, 7, 4, 3, 2, 1, 4, 7];
+
+var newArr = Array.from(new Set(arr));
+
+console.log(newArr);
+```
+### 在数组中找出最小值（或者最大值）
+```
+# 思路：利用Math.min()方法求最小值，但是该方法的参数是一个数值列表，而不是一个数组，故使用ES6新增的扩展运算符将数组转换成列表，然后传递到Math.min()方法中去即可。
+var arr = [23, 45, 40, 30, 12];
+
+var iMin = Math.min(...arr);
+
+console.log(iMin);
+```
+### 如何优雅的实现金钱格式化：1234567890 --> 1,234,567,890
+
+```
+var test1 = '1234567890'
+var format = test1.replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+
+console.log(format) // 1,234,567,890
+```
+
+### 如何优雅的取整
+
+```
+#方法一 利用ES6的数组解构方法，实现在不使用第三个变量的情况下，完成变量a和变量b的数据交换。
+
+var a = 4, b = 6;
+
+[a, b] = [b, a];
+
+console.log(a, b);
+
+# 方法二
+var a = ~~2.33
+
+var b= 2.33 | 0
+
+var c= 2.33 >> 0
+
+```
+### 论如何最佳的让两个整数交换数值
+```
+a ^= b;
+b ^= a;
+a ^= b;
+
+```
+### 统计字符串中相同字符出现的次数。
+```
+var arr = 'abcdaabc';
+
+var info = arr
+    .split('')
+    .reduce((p, k) => (p[k]++ || (p[k] = 1), p), {});
+
+console.log(info); //{ a: 3, b: 2, c: 2, d: 1 }
+
+```
+
 ### Math.min()比Math.max()大,因为Math.min() 返回 Infinity, 而 Math.max()返回 -Infinity。
 
 ### 深拷贝
