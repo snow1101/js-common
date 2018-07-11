@@ -27,7 +27,21 @@ var arr = [23, 45, 40, 30, 12];
 var iMin = Math.min(...arr);
 
 console.log(iMin);
+
 ```
+### 一个月有多少天
+
+```
+function days(year,month){
+        var dayCount;
+        now = new Date(year,month, 0);
+        dayCount = now.getDate();
+        return dayCount;
+}
+alert(days(2018,7))
+
+```
+
 ### 如何优雅的实现金钱格式化：1234567890 --> 1,234,567,890
 
 ```
