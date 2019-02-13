@@ -110,3 +110,21 @@ export const setCookie = (name, value) => {
 	document.cookie = `${name}=${escape(value)};expires=${exp.toGMTString()};path=/`;
 };
 ```
+
+### 取整
+对一个数字 | 0 可以取整，负数也同样适用， num | 0
+
+```
+1.3 | 0 //1
+-1.9 | 0 //-1
+```
+
+### 判断奇偶数 & 1
+对一个数字 & 1 可以判断奇偶数， 负数也同样适用， num & 1
+
+```
+const num=3;
+!!(num & 1) //true
+!!(num % 2) //true
+
+```
