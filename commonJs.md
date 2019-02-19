@@ -163,3 +163,51 @@ const num=3;
 !!(num % 2) //true
 
 ```
+
+### 防抖函数
+
+```
+// func是用户传入需要防抖的函数
+// wait是等待时间
+const debounce = (func, wait = 50) => {
+  // 缓存一个定时器id
+  let timer = 0
+  // 这里返回的函数是每次用户实际调用的防抖函数
+  // 如果已经设定过定时器了就清空上一次的定时器
+  // 开始一个新的定时器，延迟执行用户传入的方法
+  return function(...args) {
+    if (timer) clearTimeout(timer)
+    timer = setTimeout(() => {
+      func.apply(this, args)
+    }, wait)
+  }
+}
+// 不难看出如果用户调用该函数的间隔小于wait的情况下，上一次的时间还未到就被清除了，并不会执行函数
+```
+
+### 节流函数
+
+```
+const throttle = function(fn, threshold = 250, scope, once) {
+	let last;
+	let deferTimer;
+	return function throttled(...rest) {
+		const context = scope || this;
+		const now = Date.now();
+		if (last && now < last + threshold) {
+			if(once) {
+				deferTimer = null;
+				return;
+			}
+			clearTimeout(deferTimer);
+			deferTimer = setTimeout(() => {
+				last = now;
+		      func.apply(context, rest);
+		    }, threshold)
+		} else {
+			last = now;
+			func.apply(context, rest);
+		}
+	}
+}
+```
