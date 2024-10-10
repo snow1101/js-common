@@ -222,3 +222,9 @@ var arr = [ [1, 2, 2], [3, 4, 5, 5], [6, 7, 8, 9, [11, 12, [12, 13, [14] ] ] ], 
  var finalArr = [...new Set(arr.toString().split(",").sort((a,b)=>{ return a-b}).map(Number))]
  
 ```
+### 得到一个指定范围内的随机整数
+```
+function getRandom(min, max) {
+    return Math.floor(Math.random()*(max-min)+min)
+}
+```
