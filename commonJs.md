@@ -228,3 +228,9 @@ function getRandom(min, max) {
     return Math.floor(Math.random()*(max-min)+min)
 }
 ```
+### 得到一个指定长度的随机字符串
+```
+function getRandomString(length) {
+    return Math.random().toString(36).substring(2, 2+length)
+}
+```
