@@ -234,3 +234,8 @@ function getRandomString(length) {
     return Math.random().toString(36).substring(2, 2+length)
 }
 ```
+### 把一个伪数组转成数组
+```
+var obj = {0:1, '1':2, length:2}
+Array.prototype.slice.call(obj) // 会得到[1,2]
+```
