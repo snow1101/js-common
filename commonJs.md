@@ -239,3 +239,9 @@ function getRandomString(length) {
 var obj = {0:1, '1':2, length:2}
 Array.prototype.slice.call(obj) // 会得到[1,2]
 ```
+### 对一个数组进行随机排序
+```
+function shuffle(arr) {
+    return arr.sort(()=>Math.random() -0.5)
+}
+```
